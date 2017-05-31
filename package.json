@@ -1,0 +1,39 @@
+{
+  "name": "twitty",
+  "description": "Twitter API client for node (REST & Streaming)",
+  "version": "1.0.0",
+  "author": "Talha Asad",
+  "keywords": [
+    "twitter",
+    "api",
+    "rest",
+    "stream",
+    "streaming",
+    "oauth"
+  ],
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "mime": "^1.3.6",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "async": "0.4.1",
+    "colors": "1.1.2",
+    "commander": "2.9.0",
+    "mocha": "3.4.2",
+    "rewire": "2.5.2",
+    "sinon": "2.3.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT",
+  "main": "./lib/twitter",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/talha-asad/twitty.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests/* -t 70000 -R spec --bail --globals domain,_events,_maxListeners"
+  }
+}
