@@ -537,19 +537,9 @@ Then run the tests:
 $ npm test
 ```
 
-You can also run the example:
-
-```console
-$ node examples/rtd2.js
-```
-
-![iRTD2](http://dl.dropbox.com/u/32773572/RTD2_logo.png)
-
-The example is a twitter bot named [RTD2](https://twitter.com/#!/iRTD2) written using `twit`. RTD2 tweets about **github** and curates its social graph.
-
 -------
 
-[FAQ](https://github.com/ttezel/twit/wiki/FAQ)
+[FAQ](https://github.com/talha-asad/twitty/wiki/FAQ)
 
 -------
 
@@ -557,7 +547,7 @@ The example is a twitter bot named [RTD2](https://twitter.com/#!/iRTD2) written 
 
 (The MIT License)
 
-Copyright (c) by Tolga Tezel <tolgatezel11@gmail.com>
+Copyright (c) 2017 Talha Asad, fork of Tolga Tezel (Twit)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -579,78 +569,6 @@ THE SOFTWARE.
 
 ## Changelog
 
-### 2.2.4
-  * Fix 401 Unauthorized error on streaming connection reconnect after not being
-  connected for some time (eg. due to > 1min loss of network).
-
-### 2.2.2
-  * Emit `parser-error` instead of `error` event if Twitter sends back
-  an uncompressed HTTP response body.
-
-### 2.2.1
-  * Add promise support to Twitty REST API calls.
-
-### 2.2.0
-  * Allow omission of `new` keyword; `var t = Twitty(config)` works, and `var t = new Twitty(config)` works too.
-  * Allow setting an array of trusted certificate fingerprints via `config.trusted_cert_fingerprints`.
-  * Automatically adjust timestamp for OAuth'ed HTTP requests
-  by recording the timestamp from Twitter HTTP responses, computing our local time offset, and applying the offset in the next HTTP request to Twitter.
-
-### 2.1.7
-  * Add `mime` as a dependency.
-
-### 2.1.6
-  * Emit `friends` event for `friends_str` message received when a user stream is requested with `stringify_friend_ids=true`.
-  * Handle receiving "Exceeded connection limit for user" message from Twitter while streaming. Emit `error` event for this case.
-  * Emit `retweeted_retweet` and `favorited_retweet` user events.
-  * Add MIT license to package.json (about time!)
-
-### 2.1.5
-  * Support config-based request timeout.
-
-### 2.1.4
-  * Support POST media/upload (chunked) and add `T.postMediaChunked()` to make it easy.
-
-### 2.1.3
-  * Fix bug in constructing HTTP requests for `account/update_profile_image` and `account/update_profile_background_image` paths.
-
-### 2.1.2
-  * Enable gzip on network traffic
-  * Add `quoted_tweet` event
-
-### 2.1.1
-  * Strict-mode fixes (Twitty can now be run with strict mode)
-  * Fix handling of disconect message from Twitter
-  * If Twitter returns a non-JSON-parseable fragment during streaming, emit 'parser-error' instead of 'error' (to discard fragments like "Internal Server Error")
-
-### 2.1.0
-  * Add `message` event.
-
-### 2.0.0
-  * Implement Application-only auth
-  * Remove oauth module as a dependency
-
-### 1.1.20
-  * Implement support for POST /media/upload
-  * Reconnect logic fix for streaming; add stall abort/reconnect timeout on first connection attempt.
-
-### 1.1.14
-  * Emit `connected` event upon receiving the response from twitter
-
-### 1.0.0
-  * now to stop and start the stream, use `stream.stop()` and `stream.start()` instead of emitting the `start` and `stop` events
-  * If twitter sends a `disconnect` message, closes the stream and emits `disconnect` with the disconnect message received from twitter
-
-### 0.2.0
-  * Updated `twit` for usage with v1.1 of the Twitter API.
-
-### 0.1.5
-
-  * **BREAKING CHANGE** to `twit.stream()`. Does not take a callback anymore. It returns
-    immediately with the `EventEmitter` that you can listen on. The `Usage` section in
-    the Readme.md has been updated. Read it.
-
-
-### 0.1.4
-
-  * `twit.stream()` has signature `function (path, params, callback)`
+### 0.0.1
+  * Forked from [ttezel/twit](https://github.com/ttezel/twit)
+  * Code refactored and twit renamed to twitty
