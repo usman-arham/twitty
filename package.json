@@ -1,7 +1,7 @@
 {
   "name": "twitty",
   "description": "Twitter API client for node (REST & Streaming)",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Talha Asad",
   "keywords": [
     "twitter",
